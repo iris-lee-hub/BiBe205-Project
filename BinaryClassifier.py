@@ -13,7 +13,7 @@ class BinaryClassifier(nn.Module):
         self.fc2 = nn.Linear(n_samples, 1)    # Output layer
         
     def forward(self, x):
-        x = torch.sigmoid(self.fc1(x))
-        x = torch.sigmoid(self.fc2(x))
-        return x
+        out = self.fc1(x)
+        out = self.fc2(x)
+        return out
 
